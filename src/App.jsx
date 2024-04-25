@@ -16,6 +16,7 @@ const App = () => {
 
   return (
     <div className='App'>
+      g
    <Person/>
     </div>
   )
