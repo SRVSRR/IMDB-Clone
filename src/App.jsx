@@ -1,23 +1,20 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
 
-const Person = () => {
-  return(
-    <>
-    <h1>John</h1>
-    <h2>Smith</h2>
-    <h2>30</h2>
-    </>
-  )
-}
-
 const App = () => {
-  const isUserLoggedIn = true;
+  const [counter, setCounter] = useState(0);
+
+  useEffect(()=>{
+    alert('Counter chnaged to ' + counter);
+  }, [counter]);
 
   return (
     <div className='App'>
-      ghbhb
-   <Person/>
+      <button onClick={()=>setCounter((prevCount)=> prevCount - 1)}>-</button>
+        <h1>
+         {counter}
+        </h1>
+      <button onClick={()=>setCounter((prevCount)=> prevCount + 1)}>+</button>
     </div>
   )
 }
